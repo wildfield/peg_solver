@@ -1,11 +1,14 @@
 package peg
 
-import Elements._
+import Rules._
+import Directions._
 
 object Main {
-  val gameBoard = Array[Elements](Peg, Peg, Hole, Peg)
-  
   def main(args: Array[String]) {
-      println("Hello, world!")
+      println("start")
+      println("orig:\n" + Rules.initialBoard.mkString(" "))
+//      println("moves:\n" + Rules.validMoves(Rules.initialBoard).map(_.mkString(" ")).mkString("\n"))
+      println("moves:\n" + 
+              Rules.searchForMoves().map(_.mkString(" ")).mkString("\n"))
    }
 }
